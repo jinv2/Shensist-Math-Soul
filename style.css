@@ -92,12 +92,19 @@ body::before {
 
 .op-btn {
     width: 70px; height: 70px; border-radius: 50%;
-    background: rgba(26, 17, 10, 0.8); border: 2px solid var(--c-bronze);
-    color: var(--c-gold); font-size: 32px; cursor: pointer;
+    background: rgba(26, 17, 10, 0.8); border: 2px solid var(--theme-color);
+    color: var(--theme-color); font-size: 32px; cursor: pointer;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 10px var(--theme-glow);
 }
-.op-btn.active { background: var(--c-gold); color: #1a110a; transform: scale(1.15); box-shadow: 0 0 30px var(--theme-glow); }
+.op-btn.active { background: var(--theme-color); color: #1a110a; transform: scale(1.15); box-shadow: 0 0 40px var(--theme-glow); }
+
+#centralOpLabel, #leftOpLabel, #rightOpLabel {
+    color: var(--theme-color);
+    text-shadow: 0 0 15px var(--theme-glow);
+    transition: all 1s ease;
+}
 
 .truth-hub {
     margin-top: 10px; padding: 20px 40px; border: 3px solid var(--theme-color);
