@@ -156,23 +156,25 @@ footer {
 }
 @media (max-width: 1024px) {
     #spirit-scroll { display: none !important; }
-    .beast-area { min-height: 60px; max-width: 100% !important; }
-    .lab-card { flex-direction: column !important; gap: 20px !important; padding: 20px !important; }
-    .gear-container { padding: 10px 0 !important; }
-    .wheel-3d-wrapper { scale: 0.85; height: 200px; }
-    .gear-btn { margin-bottom: 20px; margin-top: 20px; }
-    .truth-hub { scale: 0.8; }
-    .fixed.top-6 { opacity: 0.2; pointer-events: none; }
-    .fixed.top-6:active { opacity: 1; }
-    #teacher-container { margin-left: -20px; scale: 0.8; } /* Shift and scale slightly on tablet */
+    #teacher-container { display: none !important; } /* Hide teacher on tablet to avoid overlap */
+    .beast-area { min-height: 40px; }
+    .lab-card { flex-direction: column !important; gap: 40px !important; padding: 20px !important; scale: 0.9; }
+    .gear-container { padding: 0 !important; }
+    .truth-hub { scale: 0.8; margin: 10px 0; }
 }
 
 @media (max-width: 640px) {
     h1 { font-size: 2.2rem !important; }
     .wheel-3d-wrapper { scale: 0.75; height: 160px; }
-    .truth-hub { scale: 0.7; margin-top: 0; }
-    #ai-text { font-size: 1rem !important; letter-spacing: 0.4em !important; }
-    .beast-area { transform: scale(0.7); }
-    .fixed.right-6 { display: none !important; }
-    #teacher-container { display: none !important; } /* Hide teacher on tiny mobile */
+    .truth-hub { scale: 0.7; }
+    #ai-text { font-size: 0.9rem !important; padding: 10px; }
+    .beast-area { transform: scale(0.6); max-height: 150px; overflow: hidden; }
+}
+
+@media (max-width: 400px) {
+    .lab-card { scale: 0.8; }
+    .wheel-3d-wrapper { scale: 0.65; }
+    .truth-hub { scale: 0.6; }
+    .op-btn { width: 50px; height: 50px; font-size: 20px; }
+    #centralOpLabel { font-size: 0.9rem !important; }
 }
