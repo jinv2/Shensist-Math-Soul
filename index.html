@@ -85,10 +85,22 @@
                 <!-- Operator & Result Hub -->
                 <div class="operator-pivot flex flex-col items-center gap-6">
                     <div id="op-hub" class="op-grid grid grid-cols-2 gap-4">
-                        <button class="op-btn active" data-op="+">＋</button>
-                        <button class="op-btn" data-op="-">－</button>
-                        <button class="op-btn" data-op="×">×</button>
-                        <button class="op-btn" data-op="÷">÷</button>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-[10px] text-amber-500/40 uppercase font-bold tracking-widest">加法</span>
+                            <button class="op-btn active" data-op="+">＋</button>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-[10px] text-amber-500/40 uppercase font-bold tracking-widest">减法</span>
+                            <button class="op-btn" data-op="-">－</button>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-[10px] text-amber-500/40 uppercase font-bold tracking-widest">乘法</span>
+                            <button class="op-btn" data-op="×">×</button>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-[10px] text-amber-500/40 uppercase font-bold tracking-widest">除法</span>
+                            <button class="op-btn" data-op="÷">÷</button>
+                        </div>
                     </div>
                     <div class="truth-hub">
                         <div id="resultValue">0</div>
@@ -107,7 +119,10 @@
             </div>
 
             <!-- Right Beast Area -->
-            <div id="rightBeastArea" class="beast-area flex-1 flex flex-wrap justify-center content-center gap-3 max-w-[200px]"></div>
+            <div class="flex flex-col items-center lg:flex-1 lg:max-w-[200px] gap-4">
+                <div id="rightBeastArea" class="beast-area w-full flex flex-wrap justify-center content-center gap-2 lg:gap-3"></div>
+                <div id="rightOpLabel" class="text-amber-500/80 font-bold tracking-[0.3em] text-[14px] font-serif transition-all duration-700"></div>
+            </div>
         </div>
 
         <!-- Soul Dialogue Area -->
