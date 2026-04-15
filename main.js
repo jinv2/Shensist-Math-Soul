@@ -193,6 +193,14 @@
                 document.querySelectorAll('.op-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active');
                 window.currentOp = op; 
                 
+                // Update Central Label
+                const centralLabel = document.getElementById('centralOpLabel');
+                if (centralLabel) {
+                    centralLabel.textContent = BEAST_DATA[op].name;
+                    centralLabel.style.transform = 'scale(1.2)';
+                    setTimeout(() => centralLabel.style.transform = 'scale(1)', 200);
+                }
+
                 // Update Theme
                 document.body.classList.remove('theme-add', 'theme-sub', 'theme-mul', 'theme-div');
                 if (op === '+') document.body.classList.add('theme-add');
