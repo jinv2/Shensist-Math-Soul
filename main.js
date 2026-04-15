@@ -124,22 +124,28 @@
 
     // --- 2. Spirit Beast Rendering ---
     const BEAST_DATA = { 
-        '+': { icon: '🐉', name: '龙' }, 
-        '-': { icon: '🐢', name: '玄武' }, 
-        '×': { icon: '🔥', name: '凤' }, 
-        '÷': { icon: '🦄', name: '麟' } 
+        '+': { icon: '🐉', name: '九天龙腾 · 加法' }, 
+        '-': { icon: '🐢', name: '玄武守正 · 减法' }, 
+        '×': { icon: '🔥', name: '凤凰焚空 · 乘法' }, 
+        '÷': { icon: '🦄', name: '麒麟御世 · 除法' } 
     };
     function renderBeasts(n, containerId) {
         const container = document.getElementById(containerId); if (!container) return;
         container.innerHTML = ''; const op = window.currentOp || '+'; 
         const data = BEAST_DATA[op] || BEAST_DATA['+'];
+        
+        // Update Side Label
+        const labelId = containerId === 'leftBeastArea' ? 'leftOpLabel' : 'rightOpLabel';
+        const labelEl = document.getElementById(labelId);
+        if (labelEl) {
+            labelEl.textContent = data.name;
+            labelEl.style.textShadow = `0 0 10px var(--theme-glow)`;
+        }
+
         for (let i = 0; i < n; i++) {
             const div = document.createElement('div'); 
             div.className = 'beast-wrapper flex flex-col items-center opacity-0 transition-all duration-500 scale-50';
-            div.innerHTML = `
-                <div class="beast-icon text-[50px] drop-shadow-[0_0_10px_var(--theme-glow)]">${data.icon}</div>
-                <div class="beast-name text-[10px] text-amber-500/80 font-bold tracking-tighter mt-1">${data.name}</div>
-            `;
+            div.innerHTML = `<div class="beast-icon text-[50px] drop-shadow-[0_0_10px_var(--theme-glow)]">${data.icon}</div>`;
             container.appendChild(div); 
             setTimeout(() => { div.classList.remove('opacity-0', 'scale-50'); div.classList.add('opacity-100', 'scale-100'); }, i * 50);
         }
