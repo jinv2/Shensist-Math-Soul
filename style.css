@@ -116,6 +116,22 @@ body::before {
 }
 @keyframes beast-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
+/* Spiritual Guide - Teacher Styling */
+.teacher-frame {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    animation: spiritual-float 6s infinite ease-in-out;
+}
+.teacher-frame:hover {
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+}
+@keyframes spiritual-float {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
+}
+
 /* Footer */
 footer {
     width: 100%;
